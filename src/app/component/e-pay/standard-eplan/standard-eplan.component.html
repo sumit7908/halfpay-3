@@ -1,0 +1,127 @@
+<div class="card text-center">
+    <div class="card-body">
+        <h5 class="card-title text-uppercase font-weight-bold">buy standard e-check plan</h5>
+        <p class="mb-4">Fill the below details to complete the purchase of the selected plan</p>
+        <form #form="ngForm" (ngSubmit)="pay(form.value); form.reset()">
+            <legend>Customer Billing Information</legend>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="firstName">First Name
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="First Name" aria-describedby="firstName" name="firstName" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="lastName">Last Name
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Last Name" aria-describedby="lastName" name="lastName" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="phone">Phone
+                    </span>
+                </div>
+                <input type="number" class="form-control" aria-label="Phone Number" aria-describedby="phone" name="phone" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="email">Email
+                    </span>
+                </div>
+                <input type="email" class="form-control" aria-label="Email" aria-describedby="email" name="email" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="address">Address
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Address" aria-describedby="address" name="address" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="city">City
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="City" aria-describedby="city" name="city" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="state">State
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="State" aria-describedby="state" name="state" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="zipCode">Zip Code
+                    </span>
+                </div>
+                <input type="number" class="form-control" aria-label="Zip Code" aria-describedby="zipCode" name="zipCode" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="country">Country
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Country" aria-describedby="country" name="country" ngModel>
+            </div>
+            <legend class="mt-3">Payment/Authorization Information</legend>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <label class="input-group-text" for="accountType">Account Type</label>
+                </div>
+                <select class="custom-select" id="accountType" name="accountType" ngModel>
+                    <option value="checking">Checking</option>
+                    <option value="savings">Savings</option>
+                </select>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="checkNumber">
+                        Check Number
+                    </span>
+                </div>
+                <input type="number" class="form-control" aria-label="Check number" aria-describedby="checkNumber" name="checkNumber" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="routingNumber">
+                        Routing Number
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Routing number" aria-describedby="routingNumber" name="routingNumber" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="accountNumber">
+                        Account Number
+                    </span>
+                </div>
+                <input type="number" class="form-control" aria-label="Account number" aria-describedby="accountNumber" name="accountNumber" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="nameOnAccount">
+                        Name on account
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Name on account" aria-describedby="nameOnAccount" name="nameOnAccount" ngModel>
+            </div>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="bankName">
+                        Bank Name
+                    </span>
+                </div>
+                <input type="text" class="form-control" aria-label="Bank name" aria-describedby="bankName" name="bankName" ngModel>
+            </div>
+            <button type="submit" class="btn btn-success font-weight-bold text-uppercase w-100 mt-4 mb-2">Pay $ {{ planCost }}</button>
+        </form>
+    </div>
+</div>
+
+<div class="container px-0 mt-3" *ngIf="showMsg">
+    <h5 [className]="alertType ? 'alert-success px-4 py-3' : 'alert-danger px-4 py-3'">{{ responseDescription }}</h5>
+</div>

@@ -1,0 +1,128 @@
+<div class="jumbotron">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 offset-md-3" *ngIf="regForm">
+                <h3>Registeration Form</h3>
+                <form [formGroup]="signUpform" (ngSubmit)="onSubmitSignUp()">
+                    <div class="form-group">
+                        <label>First Name</label>
+                        <input type="text" class="form-control" formControlName="fname" [ngClass]="{'is-invalid':signUpsubmitted && rf.fname.errors}" />
+                        <div *ngIf="signUpsubmitted && rf.fname.errors" class="invalid-feedback">
+                            <div *ngIf="rf.fname.errors.required">First Name is required</div>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Last Name</label>
+                        <input type="text" class="form-control" formControlName="lname"  />
+                        
+                    </div>
+                    <div class="form-group">
+                        <label>Mobile Number</label>
+                        <input type="tel" class="form-control" formControlName="mobNumber" [ngClass]="{'is-invalid':signUpsubmitted && rf.mobNumber.errors}"
+                            numberOnly />
+                        <div *ngIf="signUpsubmitted && rf.mobNumber.errors" class="invalid-feedback">
+                            <div *ngIf="rf.mobNumber.errors.required">Mobile Number is required</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group ">
+                            <label for="inputEmail">Email</label>
+                            <input type="email" class="form-control" placeholder="Email" formControlName="email"
+                                [ngClass]="{'is-invalid':signUpsubmitted && rf.email.errors}">
+                            <div *ngIf="signUpsubmitted && rf.email.errors" class="invalid-feedback">
+                                <div *ngIf="rf.email.errors.required">Email is required</div>
+                                <div *ngIf="rf.email.errors.email">Enter valid email</div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="inputPassword4">Password</label>
+                            <input type="password" class="form-control" placeholder="Password" formControlName="password"
+                                [ngClass]="{'is-invalid':signUpsubmitted && rf.password.errors}">
+                            <div *ngIf="signUpsubmitted && rf.password.errors" class="invalid-feedback">
+                                <div *ngIf="rf.password.errors.required">Password is required</div>
+                                <div *ngIf="rf.password.errors.minlength">Name must be at least 6 characters</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Address</label>
+                        <input type="text" class="form-control" placeholder="1234 Main St" formControlName="address"
+                            [ngClass]="{'is-invalid':signUpsubmitted && rf.address.errors}">
+                        <div *ngIf="signUpsubmitted && rf.address.errors" class="invalid-feedback">
+                            <div *ngIf="rf.address.errors.required">Address is required</div>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputCity">City</label>
+                            <input type="text" class="form-control" formControlName="city" [ngClass]="{'is-invalid':signUpsubmitted && rf.city.errors}">
+                            <div *ngIf="signUpsubmitted && rf.city.errors" class="invalid-feedback">
+                                <div *ngIf="rf.city.errors.required">City is required</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group col-md-6">
+                            <label for="country">Country</label>
+                            <input type="text" class="form-control" formControlName="country" [ngClass]="{'is-invalid':signUpsubmitted && rf.country.errors}">
+                            <div *ngIf="signUpsubmitted && rf.country.errors" class="invalid-feedback">
+                                <div *ngIf="rf.country.errors.required">Country is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="state">State</label>
+                            <input type="text" class="form-control" formControlName="state" [ngClass]="{'is-invalid':signUpsubmitted && rf.state.errors}">
+                            <div *ngIf="signUpsubmitted && rf.state.errors" class="invalid-feedback">
+                                <div *ngIf="rf.state.errors.required">State is required</div>
+                            </div>
+                        </div>
+                        <div class="form-group col-md-4">
+                            <label for="inputZip">Zip</label>
+                            <input type="text" class="form-control" formControlName="zipCode" [ngClass]="{'is-invalid':signUpsubmitted && rf.zipCode.errors}">
+                            <div *ngIf="signUpsubmitted && rf.zipCode.errors" class="invalid-feedback">
+                                <div *ngIf="rf.zipCode.errors.required">Zipcode is required</div>
+                            </div>
+                        </div>
+                    </div>
+                   
+                    <div class="form-group">
+                        <button class="btn btn-primary">Register</button>
+                    </div>
+                </form>
+                <p routerLink="/sign-in" class="sim-pointer">Already have an account click here for login</p>
+            </div>
+            <div class="col-md-6 offset-md-3" *ngIf="!regForm">
+                <h3>Login Form</h3>
+                <form name="form" #tf="ngForm" (ngSubmit)="tf.form.valid && onSubmitSignIn()" novalidate>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" class="form-control" name="userEmail" [(ngModel)]="signInFormValue.userEmail"
+                            #userEmail="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && userEmail.invalid }"
+                            required email />
+                        <div *ngIf="tf.submitted && userEmail.invalid" class="invalid-feedback">
+                            <div *ngIf="userEmail.errors.required">First Name is required</div>
+                            <div *ngIf="userEmail.errors.email">Email must be a valid email address</div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" name="userPassword" [(ngModel)]="signInFormValue.userPassword"
+                            #userPassword="ngModel" [ngClass]="{ 'is-invalid': tf.submitted && userPassword.invalid }"
+                            required minlength="5" togglePassword />
+                        <div *ngIf="tf.submitted && userPassword.invalid" class="invalid-feedback">
+                            <div *ngIf="userPassword.errors.required || userPassword.errors.minlength">Password must be
+                                at least 6 characters
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <button class="btn btn-primary">Login</button>
+                    </div>
+                </form>
+                <p routerLink="/sign-up" class="sim-pointer">Don't have an account click here for register</p>
+            </div>
+        </div>
+    </div>
+</div>

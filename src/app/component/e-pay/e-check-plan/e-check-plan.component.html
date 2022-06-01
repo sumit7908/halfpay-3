@@ -1,0 +1,123 @@
+<div class="container-fluid mainImg mB">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../../assets/brand-logo.png" width="120" alt="Brand Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase text-white float-right" href="#">services</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase text-white float-right" href="#">get pricing</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-uppercase text-white float-right" href="#">contact us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-12 col-sm-12 col-md-4 mb-4 text-center">
+            <div class="btn-group-vertical btn-group-toggle w-100" data-toggle="buttons">
+                <label class="btn btn-outline-info text-uppercase ptr" routerLink="basicEPlan">
+                    <input type="radio" name="options" id="option1" autocomplete="off"> basic e-check plan
+                </label>
+                <label class="btn btn-outline-info text-uppercase my-2 ptr" routerLink="standardEPlan">
+                    <input type="radio" name="options" id="option2" autocomplete="off"> standard e-check plan
+                </label>
+                <label class="btn btn-outline-info text-uppercase ptr" routerLink="advanceEPlan">
+                    <input type="radio" name="options" id="option3" autocomplete="off"> advance e-check plan
+                </label>
+                <label class="btn btn-outline-info text-uppercase my-2 ptr" routerLink="enhancedEPlan">
+                    <input type="radio" name="options" id="option4" autocomplete="off"> enhanced e-check plan
+                </label>
+                <label class="btn btn-outline-info text-uppercase ptr" routerLink="professionalEPlan">
+                    <input type="radio" name="options" id="option5" autocomplete="off"> professional e-check plan
+                </label>
+                <label class="btn btn-outline-info text-uppercase mt-2 ptr" routerLink="businessEPlan">
+                    <input type="radio" name="options" id="option6" autocomplete="off"> business e-check plan
+                </label>
+                <label class="btn btn-outline-info text-uppercase mt-2 ptr" routerLink="customEPlan">
+                    <input type="radio" name="options" id="option6" autocomplete="off"> custom e-check plan
+                </label>
+            </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-8">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-dark mt-5">
+    <div class="container text-white pt-4 pb-3">
+        <div class="row">
+
+            <div class="col-12 col-sm-12 text-center mb-5">
+                <a class="navbar-brand" href="#">
+                    <img src="../../assets/brand-logo.png" width="200" alt="Brand Logo">
+                </a>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+                <h5 class="text-uppercase font-weight-bold mb-3">company</h5>
+                <p>About Us</p>
+                <p>Career</p>
+                <p>Blog</p>
+                <p class="ptr" (click)="goToPolicy()">Privacy Policy</p>
+                <p class="ptr" (click)="goToEPay()">Pay via e-Check</p>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+                <h5 class="text-uppercase font-weight-bold mb-3">product</h5>
+                <p>Customer Service</p>
+                <p>Enterprise</p>
+                <p>Price</p>
+                <p>Secutiry</p>
+                <p>Why <span class="text-uppercase">compufy</span>?</p>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+                <h5 class="text-uppercase font-weight-bold mb-3">download app</h5>
+                <p>Android App</p>
+                <p>iOS App</p>
+                <p>Windows App</p>
+            </div>
+
+            <div class="col-12 col-sm-6 col-md-3 mb-3">
+                <h5 class="text-uppercase font-weight-bold mb-3">location</h5>
+                <p>141-07 20th Avenue Suite 508,Whitestone,NY,11357</p>
+                <h5 class="text-uppercase font-weight-bold mb-3">email</h5>
+                <p href="mailto:info@compufytechnologyllc.com" class="ptr">info@compufytechnologyllc.com</p>
+            </div>
+            <div class="col-12 col-sm-12 text-center mt-3">
+                <a href="www.facebook.com">
+                    <img src="../../assets/social/facebook.png" alt="Facebook Link" width="30">
+                </a>
+                <a href="www.linkedin.com">
+                    <img src="../../assets/social/linkedin.png" class="mx-3" alt="LinkedIn Link" width="30">
+                </a>
+                <a href="www.twitter.com">
+                    <img src="../../assets/social/twitter.png" alt="Twitter Link" width="30">
+                </a>
+                <a href="www.pinterest.com">
+                    <img src="../../assets/social/pinterest.png" class="mx-3" alt="Pinterest Link" width="30">
+                </a>
+                <a href="www.quora.com">
+                    <img src="../../assets/social/quora.png" alt="Quora Link" width="30">
+                </a>
+
+            </div>
+            <div class="col-12 col-sm-12 border-top pt-3 mt-5 text-center">
+                <h5><span class="text-success">Crafted by</span><span class="text-uppercase ptr"> compufy</span></h5>
+            </div>
+        </div>
+    </div>
+</div>
