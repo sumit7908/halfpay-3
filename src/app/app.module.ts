@@ -11,7 +11,6 @@ import { FilterPipe } from './shared/filter.pipe';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AdvanceEPlanComponent } from './component/e-pay/advance-eplan/advance-eplan.component';
 import { GooglePayButtonModule } from '@google-pay/button-angular';
-import { UserProfileComponent } from './component/user-profile/user-profile.component';
 import { CommonModule } from '@angular/common';
 import {SigninSignupComponent} from './component/signin-signup/signin-signup.component'
 
@@ -24,7 +23,7 @@ import {SigninSignupComponent} from './component/signin-signup/signin-signup.com
     SigninSignupComponent,
     FilterPipe,
     AdvanceEPlanComponent,
-    UserProfileComponent,
+  
 
   ],
   imports: [

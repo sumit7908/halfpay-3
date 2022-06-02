@@ -1,3 +1,5 @@
+import { Image } from "./image";
+
 export class User {
     'email': string;
     'address': String;
@@ -9,7 +11,7 @@ export class User {
     'firstName': string;
     'lastName': string;
     'password': string;
+    'uploadPhoto': Array<Image>;
 }
 
   
-

@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+ integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
 <div class="jumbotron">
     <div class="container">
         <div class="row">
@@ -45,7 +48,17 @@
                                 <div *ngIf="rf.password.errors.minlength">Name must be at least 6 characters</div>
                             </div>
                         </div>
-                    </div>
+                    </div><br/>
+                    <div class="form-group">
+                        <label for="exampleFormControlFile1">Upload Your Photo</label>
+                        <input type="file" class="form-control-file" (change)="onFileChanged($event)" formControlName="uploadPhoto" [ngClass]="{'is-invalid':signUpsubmitted && rf.uploadPhoto.errors}">
+                 
+                    
+                        <div *ngIf="signUpsubmitted && rf.uploadPhoto.errors" class="invalid-feedback">
+                            <div *ngIf="rf.uploadPhoto.errors.required">Please upload file</div>
+                        </div>
+                    </div><br/>
+                    
                     <div class="form-group">
                         <label for="inputAddress">Address</label>
                         <input type="text" class="form-control" placeholder="1234 Main St" formControlName="address"
