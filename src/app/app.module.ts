@@ -13,6 +13,7 @@ import { AdvanceEPlanComponent } from './component/e-pay/advance-eplan/advance-e
 import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { CommonModule } from '@angular/common';
 import {SigninSignupComponent} from './component/signin-signup/signin-signup.component'
+import { AboutComponent } from './component/about/about.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import {SigninSignupComponent} from './component/signin-signup/signin-signup.com
     SigninSignupComponent,
     FilterPipe,
     AdvanceEPlanComponent,
+    AboutComponent
   
 
   ],
