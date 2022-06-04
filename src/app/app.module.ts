@@ -14,6 +14,7 @@ import { GooglePayButtonModule } from '@google-pay/button-angular';
 import { CommonModule } from '@angular/common';
 import {SigninSignupComponent} from './component/signin-signup/signin-signup.component'
 import { AboutComponent } from './component/about/about.component';
+import { LogoutComponent } from './component/logout/logout.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { AboutComponent } from './component/about/about.component';
     SigninSignupComponent,
     FilterPipe,
     AdvanceEPlanComponent,
-    AboutComponent
+    AboutComponent,
+    LogoutComponent
   
 
   ],

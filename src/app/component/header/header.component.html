@@ -9,21 +9,15 @@
             </div>
             <span class="fas fa-search search-icon"></span>
                     <a class="nav-link" style="left:325px; color:white" routerLink="/about">About</a>
-                    <button class="nav-link" style="margin-right:5px; ;" routerLink="/sign-in">Log in</button>
+                    <button *ngIf="!loginService.isUserLoggedIn()" class="nav-link" style="margin-right:5px; ;" routerLink="/sign-in">Log in</button>
+                    <button *ngIf="loginService.isUserLoggedIn()" class="nav-link" style="margin-right:5px; ;" routerLink="/logout">LogOut</button>
                     <button class="nav-link" style="border-radius: 20px;" routerLink="/sign-in">Sell</button>
                     <button routerLink="/cart"  style="position: fixed; left:1270px; height:50px;" class="btn btn-dark" id="Cart">
                         <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
                         <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
                     </button>
                     
-            <ul class="navbar-nav ml-auto" *ngIf="logged_in">
-                <li class="nav-item">
-                    <a class="nav-link sim-pointer" routerLink="/my-profile">{{'header.my_profile'}}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link sim-pointer" (click)="logOut()">{{'header.signout'}}</a>
-                </li>
-            </ul>
+            
 
         </div>
       

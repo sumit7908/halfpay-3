@@ -11,6 +11,9 @@ import { User } from '../model/user';
 export class LoginSignupService {
   public login_url = environment.server_url;
   public reg_url = environment.server_url;
+  data;
+  loggedIn: Boolean;
+
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
 
@@ -21,9 +24,28 @@ export class LoginSignupService {
       password: password
     };
     console.log(body)
-
-    return this.http.post<any>( "http://localhost:8020/login", body, 
+    this.data = this.http.post<any>( "http://localhost:8020/login", body, 
     {headers : new HttpHeaders({ 'Content-Type': 'application/json' })});
+    if(this.data != null){
+      sessionStorage.setItem('username',user_name);
+      this.loggedIn=true;
+    }
+    else{
+      this.loggedIn=false;
+    }
+
+    return this.data;
+  }
+
+  isUserLoggedIn() {
+    let user = sessionStorage.getItem('username')
+    console.log(user)
+    console.log(!(user === null))
+    return !(user === null)
+  }
+
+  logOut() {
+    sessionStorage.removeItem('username')
   }
 
 
