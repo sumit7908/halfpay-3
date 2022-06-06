@@ -15,6 +15,7 @@ import { CommonModule } from '@angular/common';
 import {SigninSignupComponent} from './component/signin-signup/signin-signup.component'
 import { AboutComponent } from './component/about/about.component';
 import { LogoutComponent } from './component/logout/logout.component';
+import { PostAdComponent } from './component/post-ad/post-ad.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LogoutComponent } from './component/logout/logout.component';
     FilterPipe,
     AdvanceEPlanComponent,
     AboutComponent,
-    LogoutComponent
+    LogoutComponent,
+    PostAdComponent
   
 
   ],

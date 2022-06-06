@@ -11,6 +11,7 @@ export class ProductsComponent implements OnInit {
   public totalItem : number = 0;
   public productList : any ;
   public filterCategory : any
+  public searchTerm !: string;
   searchKey:string ="";
   constructor(private api : ApiService, private cartService : CartService) { }
 
@@ -19,6 +20,7 @@ export class ProductsComponent implements OnInit {
     .subscribe(res=>{
       this.totalItem = res.length;
     })
+ 
 
     this.api.getProduct()
     .subscribe(res=>{
@@ -37,6 +39,11 @@ export class ProductsComponent implements OnInit {
       this.searchKey = val;
     })
   }
+  search(event:any){
+    this.searchTerm = (event.target as HTMLInputElement).value;
+    console.log(this.searchTerm);
+    this.cartService.search.next(this.searchTerm);
+  }
   addtocart(item: any){
     this.cartService.addtoCart(item);
   }
@@ -50,3 +57,7 @@ export class ProductsComponent implements OnInit {
   }
 
 }
+function search(event: Event, any: any) {
+  throw new Error('Function not implemented.');
+}
+

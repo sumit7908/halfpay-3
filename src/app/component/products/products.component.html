@@ -13,7 +13,7 @@
                             <h2>Popular Category</h2>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a (click)="filter('')"><i class="fa fa-all"></i> All Categories</a></li>
+                                    <a (click)="filter('')"><i class="fa fa-all"  routerLink="/products"></i> All Categories</a></li>
                                 <li class="list-inline-item">
                                     <a (click)="filter('house')"><i class="fa fa-home"></i> House</a></li>
                                 <li class="list-inline-item">
@@ -44,22 +44,28 @@
                                     <div class="col-lg-12 col-md-12 align-content-center">
                                             <form>
                                                 <div class="row" style="border-collapse:separate; border: spacing 15px; ;">
+                                                   
                                                     <div class="col">
-                                                        <input type="text" class="form-control my-2 my-lg-1" id="inputtext4" placeholder="What are you looking for">
-                                                    </div>
-                                                    <div class="col">
-                                                        <select class="w-100 form-control mt-lg-1 mt-md-2">
-                                                            <option>Category</option>
-                                                            <!-- <option value="1">Top rated</option> -->
-                                                            <!-- <option value="2">Lowest Price</option> -->
-                                                            <!-- <option value="4">Highest Price</option> -->
+                                                    
+                                                        <select class="w-100 form-control mt-lg-1 mt-md-2 ">
+                                                            <span clss="caret"></span>
+                                                            <option>category </option>
+                                                                <option value="1">Automobiles</option> 
+                                                                <option value="2">Furniture</option> 
+                                                                 <option value="3">Electronic</option>
+                                                                 <option value="4">House</option>
+                                                                 <option value="5">Others</option>
+                                                                
+                                                            
                                                         </select>
+                                                
+                        
                                                     </div>
                                                     <div class="form-group col-md-4">
                                                         <input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Location">
                                                     </div>
                                                     <div class="form-group col-md-2 align-self-center">
-                                                        <button type="submit" class="btn btn-primary">Search Now</button>
+                                                        <button type="submit" class="btn btn-primary" (enter)="search($event)" >Search Now</button>
                                                     </div>
                                                 </div>
                                             </form>

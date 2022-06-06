@@ -23,6 +23,7 @@ export class HeaderComponent implements OnInit {
     console.log(this.searchTerm);
     this.cartService.search.next(this.searchTerm);
   }
+ 
 
 
 

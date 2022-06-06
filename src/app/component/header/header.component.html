@@ -7,16 +7,15 @@
             <div class="form-group">
                 <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
             </div>
-            <span class="fas fa-search search-icon"></span>
-                    <a class="nav-link" style="left:325px; color:white" routerLink="/about">About</a>
+            <span type="submit" class="fas fa-search search-icon"></span>
+                    <a class="nav-link" style="left:250px; color:white" routerLink="/about">About</a>
                     <button *ngIf="!loginService.isUserLoggedIn()" class="nav-link" style="margin-right:5px; ;" routerLink="/sign-in">Log in</button>
                     <button *ngIf="loginService.isUserLoggedIn()" class="nav-link" style="margin-right:5px; ;" routerLink="/logout">LogOut</button>
-                    <button class="nav-link" style="border-radius: 20px;" routerLink="/sign-in">Sell</button>
-                    <button routerLink="/cart"  style="position: fixed; left:1270px; height:50px;" class="btn btn-dark" id="Cart">
+                    <button class="nav-link" style="border-radius: 20px;" routerLink="/postad">Ad-Listing</button>
+                    <button routerLink="/cart"  style="position: fixed; left:1175px; height:50px;" class="btn btn-dark" id="Cart">
                         <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
                         <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
                     </button>
-                    
             
 
         </div>
