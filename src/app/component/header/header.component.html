@@ -1,4 +1,5 @@
-    <div class="navbar navbar-dark bg-dark">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <div class="navbar navbar-dark bg-dark">
         <div class="navbar-brand align-item-center d-flex">
             <img src="../assets/Images/flogo3.png" style="width:50%; height:45px; max-width:145px;" routerLink="/products"/>
             <i style="font-size: 0px;" class="">&nbsp;   
@@ -7,12 +8,13 @@
             <div class="form-group">
                 <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
             </div>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <span type="submit" class="fas fa-search search-icon"></span>
-                    <a class="nav-link" style="left:250px; color:white" routerLink="/about">About</a>
+                    <a class="nav-link" style="left:250px; color:white" routerLink="/about">About Us</a>
                     <button *ngIf="!loginService.isUserLoggedIn()" class="nav-link" style="margin-right:5px; ;" routerLink="/sign-in">Log in</button>
                     <button *ngIf="loginService.isUserLoggedIn()" class="nav-link" style="margin-right:5px; ;" routerLink="/logout">LogOut</button>
                     <button class="nav-link" style="border-radius: 20px;" routerLink="/postad">Ad-Listing</button>
-                    <button routerLink="/cart"  style="position: fixed; left:1175px; height:50px;" class="btn btn-dark" id="Cart">
+                    <button routerLink="/cart"  style="position: relative; left:25px; height:50px;" class="btn btn-dark" id="Cart">
                         <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
                         <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
                     </button>

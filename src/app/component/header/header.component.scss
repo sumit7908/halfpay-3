@@ -5,11 +5,11 @@
 }
 
 .search-icon {
-    position: absolute;
+    position: relative;
     z-index: 10;
-    right: 42%;
-    top: 20px;
-    color:white;
+    right: 3%;
+    top: 8px;
+    color:rgb(4, 4, 4);
 }
 /* /=== MEDIA QUERY ===/ */
 @import url("https://fonts.googleapis.com/css?family=Muli:300,400,600,700,800,900");
