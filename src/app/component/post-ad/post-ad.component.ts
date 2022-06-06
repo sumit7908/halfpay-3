@@ -17,14 +17,19 @@ export class PostAdComponent implements OnInit {
     this.productForm = this.formBuilder.group({
       title: ['', Validators.required],
      
-      mobNumber: ['', Validators.required],     
+      catagory: ['', Validators.required],     
       email: ['', [Validators.required, Validators.email]],
-      password: ['', [Validators.required, Validators.minLength(6)]],
-      address: ['', Validators.required],
-      city: ['', Validators.required],
+      description: ['', [Validators.required,]],
+      price: ['', Validators.required],
+      name: ['', Validators.required],
+      phone: ['', Validators.required],
       country: ['', Validators.required],
       state: ['', Validators.required],
-      zipCode: ['', Validators.required],
+      city: ['', Validators.required],
+      pin: ['', Validators.required],
+      address: ['', Validators.required],
+      time: ['', Validators.required],
+      duration: ['', Validators.required],
       uploadPhoto: [],
      
 
