@@ -5,7 +5,7 @@
      <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 submitad-wrap">
         <div class="container submitad-main-outer">
         <h4 class="form-ttl">Ad Details</h4>
-          <form role="form" [formGroup]="productForm" (ngSubmit)="onProductSubmit()">
+          <form role="form" [formGroup]="productForm" (ngSubmit)="onProductSubmit()" id="form" enctype="multipart/form-data" >
            <div class="col-md-7 col-md-offset-2 col-sm-7 col-sm-offset-2 submitad-main">
   
               <div class="input-group custom-field-wrap">
@@ -20,14 +20,14 @@
               <label>Category</label>
                 
                 
-              <select  formControlName="category" [ngClass]="{'is-invalid':productsubmitted && rf.category.errors}"   class="w-100 form-control mt-lg-1 mt-md-2">
+              <select class="w-100 form-control mt-lg-1 mt-md-2" formControlName="category" [ngClass]="{'is-invalid':productsubmitted && rf.category.errors}">
                 
                 <option>None</option>
-                    <option value="1">Automobiles</option> 
-                    <option value="2">Furniture</option> 
-                     <option value="4">Electronic</option>
-                     <option value="4">House</option>
-                     <option value="4">Others</option>
+                    <option value="Automobiles">Automobiles</option> 
+                    <option value="Furniture">Furniture</option> 
+                     <option value="Electronic">Electronic</option>
+                     <option value="House">House</option>
+                     <option value="Others">Others</option>
                      <div *ngIf="productsubmitted && rf.catagory.errors" class="invalid-feedback">
                       <div *ngIf="rf.catagory.errors.required">Catagory is required</div>
                   </div>
@@ -58,25 +58,18 @@
               
               <div class="input-group custom-field-wrap">
                 <label>Upload Photos</label>
-                <div class="custom-file-input-wrap">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                  <input class="custom-file-input" type="file" name="pic" accept="image/*">
-                </div>
-              </div><!-- /custom-field-wrap-->
+                <input type="text" class="form-control" formControlName="productImage" [ngClass]="{'is-invalid':productsubmitted && rf.productImage.errors}">
+                <div *ngIf="productsubmitted && rf.price.errors" class="invalid-feedback">
+                  <div *ngIf="rf.productImage.errors.required">Photo is required</div>
+              </div>
            </div><!-- /submitad-main-->
            <br>
           
           
-        </form>
+        
         <h4 class="form-ttl">Contact Details</h4>
         <section class="col-lg-12 col-md-12 col-sm-12 col-xs-12 contact-dtl-wrap">
-          <form role="form">
+          
            <div class="col-md-7 col-md-offset-2 col-sm-7 col-sm-offset-2 contact-dtl-main">
   
               <div class="input-group contact-field-wrap">
@@ -167,17 +160,13 @@
               </div><!-- /custom-field-wrap-->
             <br>
   
-              <div class="submit-ad-button-box">
-                <button class="btn-submit-ad" href="#">Submit</button>
-                
-              </div>
+            <div class="form-group">
+              <button class="btn btn-primary">Submit</button>
+          </div>
              </div><!-- /contact-dtl-main-->
   
-            <div class="col-md-3 col-sm-3 contact-dtl-right">
-              <div class="contact-dtl-user-img">
-              </div><!-- /contact-dtl-user-img-->
-            </div><!-- /contact-dtl-right-->
-          </form>
+           
+         
        </section>
   
   

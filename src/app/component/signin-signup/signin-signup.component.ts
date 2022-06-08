@@ -123,7 +123,9 @@ export class SigninSignupComponent implements OnInit {
   
     this.logsign_service.authLogin(this.signInFormValue.userEmail, this.signInFormValue.userPassword)
     .subscribe(data => {
+      this.logsign_service.user_id = data.id;
       this.user_data = data;
+
       if (this.user_data != null) {
         /**if (this.user_data[0].role == "seller") {
           sessionStorage.setItem("user_session_id", this.user_data[0].id);

@@ -13,7 +13,7 @@ export class LoginSignupService {
   public reg_url = environment.server_url;
   data;
   loggedIn: Boolean;
-
+  user_id;
 
   constructor(private http: HttpClient, private apiService: ApiService) { }
 
@@ -41,6 +41,7 @@ export class LoginSignupService {
     let user = sessionStorage.getItem('username')
     console.log(user)
     console.log(!(user === null))
+    console.log(this.user_id)
     return !(user === null)
   }
 

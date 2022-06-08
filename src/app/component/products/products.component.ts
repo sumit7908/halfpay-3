@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { ApiService } from 'src/app/service/api.service';
 import { CartService } from 'src/app/service/cart.service';
+import { ProductService } from 'src/app/service/product.service';
 
 @Component({
   selector: 'app-products',
@@ -13,7 +15,8 @@ export class ProductsComponent implements OnInit {
   public filterCategory : any
   public searchTerm !: string;
   searchKey:string ="";
-  constructor(private api : ApiService, private cartService : CartService) { }
+  data: any =[];
+  constructor(private api : ApiService, private cartService : CartService, private productService: ProductService) { }
 
   ngOnInit(): void {
     this.cartService.getProducts()
@@ -21,6 +24,11 @@ export class ProductsComponent implements OnInit {
       this.totalItem = res.length;
     })
  
+    this.productService.allProduct()
+    .subscribe( (res) => {
+        this.filterCategory = res;
+        console.log(this.filterCategory);
+    })
 
     this.api.getProduct()
     .subscribe(res=>{
