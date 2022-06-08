@@ -6,6 +6,7 @@ import { CartComponent } from './component/cart/cart.component';
 import { AdvanceEPlanComponent } from './component/e-pay/advance-eplan/advance-eplan.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { PostAdComponent } from './component/post-ad/post-ad.component';
+import { ProdDetailsComponent } from './component/prod-details/prod-details.component';
 import { ProductsComponent } from './component/products/products.component';
 import { SigninSignupComponent } from './component/signin-signup/signin-signup.component';
 
@@ -20,6 +21,7 @@ const routes: Routes = [
   { path: "about", component: AboutComponent },
   { path: "logout", component: LogoutComponent },
   { path: "postad", component: PostAdComponent },
+  { path: "prod-details/:id", component: ProdDetailsComponent},
   
   
 

@@ -16,6 +16,7 @@ import {SigninSignupComponent} from './component/signin-signup/signin-signup.com
 import { AboutComponent } from './component/about/about.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { PostAdComponent } from './component/post-ad/post-ad.component';
+import { ProdDetailsComponent } from './component/prod-details/prod-details.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PostAdComponent } from './component/post-ad/post-ad.component';
     AdvanceEPlanComponent,
     AboutComponent,
     LogoutComponent,
-    PostAdComponent
+    PostAdComponent,
+    ProdDetailsComponent
   
 
   ],

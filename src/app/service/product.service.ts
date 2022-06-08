@@ -23,10 +23,11 @@ export class ProductService {
     return this.http.post<Product>( "http://localhost:8020/productupload", product_dto);
   }
 
+
  
 
   singleProduct(id) {
-    return this.apiService.get(this.product_url + id)
+    return this.apiService.get("http://localhost:8020/product/details", id)
   }
   updateProduct(id, product_dto): Observable<any> {
     return this.apiService.put(this.product_url + id, product_dto);
