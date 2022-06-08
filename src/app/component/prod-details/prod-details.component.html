@@ -1,18 +1,48 @@
+<div class = "card-wrapper">
+    <div class = "card">
+      <!-- card left -->
+      <div class = "product-imgs">
+        <div class = "img-display">
+          <div class = "img-showcase">
+            <img src = "{{productDetails.productImage}}" alt = "{{productDetails.title}}">
+           </div>
+        </div>
+      </div>
+      <!-- card right -->
+      <div class = "product-content">
+        <h2 class = "product-title">{{productDetails.title}}</h2>
+      
+  
+        <div class = "product-price">
+         
+          <p class = "new-price">Rent <span>{{productDetails.price |  currency: 'INR' }} / {{productDetails.time}}</span></p>
+          <p class = "new-price">Category <span>{{productDetails.category}}</span></p>
 
-----------------------------------------
-<h1>title</h1>
-'category': string;
-'price': number;
-<p>Spacious 1 Bhk semi furnished flat for rent in Lr Bande, flat is on 2nd floor with good interior, apartment comes with lift, car park, 24/7 water facility, 24 hours security, CCTV camera installed, and power backup, with ups facility, every flat tenant have dedicated car parking, easy access to super markets, hospitals, restaurants, clinics, banks and ATM, near by access to Manyata tech park, Hebbal and ring road, for more information please call.</p>
-'name': string;
-'email': string;
-'phone': number;
-'country': string;
-'state': string;
-'city': string;
-'pin': number;
-'status': boolean;
-'time': number;
-'duration': string;
+        </div>
+  
+        <div class = "product-detail">
+          <h2>Description </h2>
+          <p>{{productDetails.description}}</p>
+        </div>
+        <br>
+        <h2>Seller Information</h2>
+        <br>
+        <p><b>Name: </b> {{productDetails.name}}</p>
+        <p><b>Email: </b>{{productDetails.email}}</p>
+        <p><b>Phone: </b>{{productDetails.phone}}</p>
+        <p><b>Country: </b>{{productDetails.country}}</p>
+        <p><b>State: </b>{{productDetails.state}}</p>
+        <p><b>City: </b>{{productDetails.city}}</p>
+        <p><b>Pin: </b>{{productDetails.pin}}</p>
+        <p>Renting Out for {{productDetails.duration}}{{productDetails.time}}</p>
 
-'productImage':string;
+        <div class = "purchase-info">
+         
+          <button type = "button" class = "btn">
+            Add to Cart 
+         </button>
+        </div>
+  
+      </div>
+    </div>
+  </div>

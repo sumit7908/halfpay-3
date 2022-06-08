@@ -72,7 +72,7 @@ export class SigninSignupComponent implements OnInit {
     console.log(this.selectedFile);
     
     const uploadImageData = new FormData();
-    console.log(this.selectedFile.name)
+    if(this.selectedFile != null){
     uploadImageData.append('imageFile', this.selectedFile, this.selectedFile.name);
   
     this.http.post('http://localhost:8020/upload', uploadImageData, { observe: 'response' })
@@ -85,7 +85,7 @@ export class SigninSignupComponent implements OnInit {
       }
       );
 
-
+    }
    
     this.user_reg_data = this.signUpform.value;
     this.user_reg_data.uploadPhoto = this.selectedFile;
