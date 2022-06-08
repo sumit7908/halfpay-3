@@ -26,7 +26,7 @@ export class ProductsComponent implements OnInit {
  
     this.productService.allProduct()
     .subscribe( (res) => {
-        this.filterCategory = res;
+        this.data = res;
         console.log(this.filterCategory);
     })
 
