@@ -50,7 +50,24 @@ export class ProductsComponent implements OnInit {
   }
   filter(category){
 
-    console.log(this.data.category) 
+    this.productService.getByCategory(category)
+    .subscribe((data : {} ) => {
+      this.data = data;
+    }) 
+
+    
+  }
+  getAll(){
+
+    this.productService.allProduct()
+    .subscribe( (res) => {
+        this.data = res;
+        this.productList = res;
+        this.productList.forEach((a:any) => {
+          
+        }
+        )
+    })
 
     
   }

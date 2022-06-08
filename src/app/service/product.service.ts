@@ -22,7 +22,9 @@ export class ProductService {
     console.log(product_dto);
     return this.http.post<Product>( "http://localhost:8020/productupload", product_dto);
   }
-
+  getByCategory(category) {
+    return this.apiService.get("http://localhost:8020/category/"+category, category)
+  }
 
  
 

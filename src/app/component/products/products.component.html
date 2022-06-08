@@ -13,7 +13,7 @@
                             <h2>Popular Category</h2>
                             <ul class="list-inline">
                                 <li class="list-inline-item">
-                                    <a (click)="filter('')"><i class="fa fa-all"  routerLink="/products"></i> All Categories</a></li>
+                                    <a (click)="getAll()"><i class="fa fa-all"  ></i> All Categories</a></li>
                                 <li class="list-inline-item">
                                     <a (click)="filter('house')"><i class="fa fa-home"></i> House</a></li>
                                 <li class="list-inline-item">
@@ -49,11 +49,11 @@
                                                     
                                                         <select class="w-100 form-control mt-lg-1 mt-md-2">
                                                             <option>Category</option>
-                                                                <option value="1">Automobiles</option> 
-                                                                <option value="2">Furniture</option> 
-                                                                <option value="4">Electronic</option>
-                                                                <option value="5">House</option>
-                                                                <option value="6">Others</option>
+                                                                <option value="Automobiles">Automobiles</option> 
+                                                                <option value="Furniture">Furniture</option> 
+                                                                <option value="Electronic">Electronic</option>
+                                                                <option value="House">House</option>
+                                                                <option value="Others">Others</option>
                                                         </select>       
 
                                                 
