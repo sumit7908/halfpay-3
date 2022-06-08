@@ -28,8 +28,8 @@
                      <option value="Electronic">Electronic</option>
                      <option value="House">House</option>
                      <option value="Others">Others</option>
-                     <div *ngIf="productsubmitted && rf.catagory.errors" class="invalid-feedback">
-                      <div *ngIf="rf.catagory.errors.required">Catagory is required</div>
+                     <div *ngIf="productsubmitted && rf.category.errors" class="invalid-feedback">
+                      <div *ngIf="rf.category.errors.required">category is required</div>
                   </div>
             </select>
             <br>
@@ -140,16 +140,18 @@
               
 
               <label>Time</label>
-              <select class="w-100 form-control mt-lg-1 mt-md-2">
+              <select class="w-100 form-control mt-lg-1 mt-md-2" formControlName="time" [ngClass]="{'is-invalid':productsubmitted && rf.time.errors}">
                 
                 <option>None</option>
-                    <option value="1">Days</option> 
-                    <option value="2">Weeks</option> 
-                     <option value="4">Months</option>
-
+                    <option value="Days">Days</option> 
+                    <option value="Weeks">Weeks</option> 
+                     <option value="Months">Months</option>
                      
-                     
+                     <div *ngIf="productsubmitted && rf.time.errors" class="invalid-feedback">
+                      <div *ngIf="rf.time.errors.required">category is required</div>
+                  </div>
             </select>
+             
             <br>
             <div class="input-group contact-field-wrap">
                 <label>Duration</label>
