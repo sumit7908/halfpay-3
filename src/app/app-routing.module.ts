@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { GooglePayButtonComponent } from '@google-pay/button-angular';
 import { AboutComponent } from './component/about/about.component';
 import { CartComponent } from './component/cart/cart.component';
+import { ConfirmComponent } from './component/confirm/confirm.component';
 import { AdvanceEPlanComponent } from './component/e-pay/advance-eplan/advance-eplan.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { PostAdComponent } from './component/post-ad/post-ad.component';
@@ -22,6 +23,7 @@ const routes: Routes = [
   { path: "logout", component: LogoutComponent },
   { path: "postad", component: PostAdComponent },
   { path: "details/:prod-id", component: ProdDetailsComponent},
+  { path: "confirm", component:ConfirmComponent}
   
   
 

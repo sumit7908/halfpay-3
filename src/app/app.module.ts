@@ -17,6 +17,7 @@ import { AboutComponent } from './component/about/about.component';
 import { LogoutComponent } from './component/logout/logout.component';
 import { PostAdComponent } from './component/post-ad/post-ad.component';
 import { ProdDetailsComponent } from './component/prod-details/prod-details.component';
+import { ConfirmComponent } from './component/confirm/confirm.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { ProdDetailsComponent } from './component/prod-details/prod-details.comp
     AboutComponent,
     LogoutComponent,
     PostAdComponent,
-    ProdDetailsComponent
+    ProdDetailsComponent,
+    ConfirmComponent
   
 
   ],
