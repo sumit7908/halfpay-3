@@ -13,7 +13,7 @@ export class ProductsComponent implements OnInit {
   public totalItem : number = 0;
   public productList : any ;
   public filterCategory : any
-  public searchTerm !: string;
+  searchTerm : string;
   searchKey:string ="";
   categorySelected;
   data: any =[];
@@ -42,11 +42,7 @@ export class ProductsComponent implements OnInit {
       this.searchKey = val;
     })
   }
-  search(event:any){
-    this.searchTerm = (event.target as HTMLInputElement).value;
-    console.log(this.searchTerm);
-    this.cartService.search.next(this.searchTerm);
-  }
+
   addtocart(item: any){
     this.cartService.addtoCart(item);
   }
@@ -97,6 +93,13 @@ export class ProductsComponent implements OnInit {
 
   locationCategory(){
     this.productService.getByLocationCategory(this.location,this.categorySelected)
+    .subscribe((data : {} ) => {
+      this.data = data;
+    })
+  }
+
+  search(){
+    this.productService.search(this.searchTerm,this.searchTerm)
     .subscribe((data : {} ) => {
       this.data = data;
     })

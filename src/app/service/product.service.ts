@@ -43,6 +43,12 @@ export class ProductService {
     return this.apiService.get("http://localhost:8020/product/"+id, id)
   }
 
+  search(title, description ): Observable<any> {
+    const params = new HttpParams()
+    .set('title', title)
+    .set('description', description);
+    return this.http.get<any>( "http://localhost:8020/search/"+title+"/"+description, {params});
+  }
 
   updateProduct(id, product_dto): Observable<any> {
     return this.apiService.put(this.product_url + id, product_dto);
