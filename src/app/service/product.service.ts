@@ -69,7 +69,7 @@ export class ProductService {
     .set('keyword', keyword)
     .set('category', category)
     .set('location', location);
-    return this.http.get<any>( "http://localhost:8020/searchAndCategory/"+keyword+"/"+category+"/"+location, {params});
+    return this.http.get<any>( "http://localhost:8020/advancedSearch/"+keyword+"/"+category+"/"+location, {params});
   }
 
   updateProduct(id, product_dto): Observable<any> {

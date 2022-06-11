@@ -106,31 +106,45 @@ export class ProductsComponent implements OnInit {
   }
 
   advancedSearch(){
-    if(this.searchTerm == null || this.searchTerm=="" && this.categorySelected == null || this.categorySelected == "Category"){
+    console.log(this.searchTerm)
+    console.log(this.categorySelected)
+    console.log(this.location)
+    if((this.searchTerm == null || this.searchTerm=="") && (this.categorySelected == null || this.categorySelected == "Category")){
+      console.log("this.locationSearch()")
       this.locationSearch();
     }
-    else if(this.searchTerm == null || this.searchTerm=="" && this.location || this.location==""){
+    else if((this.searchTerm == null || this.searchTerm=="") && (this.location==null || this.location=="")){
+      console.log("category()")
+
       this.category();
     }
-    else if(this.categorySelected==null || this.categorySelected == "Category" && this.location==null || this.location==""){
+    else if((this.categorySelected==null || this.categorySelected == "Category") && (this.location==null || this.location=="")){
+      console.log("search()")
       this.search();
     }
     else if (this.searchTerm == null || this.searchTerm==""){
+      console.log("locationCategory()")
       this.locationCategory();
     }
     else if (this.categorySelected == null || this.categorySelected == "Category"){
+      console.log("searchLocation")
       this.productService.searchAndLocation(this.searchTerm,this.location)
       .subscribe((data : {} ) => {
+        console.log(data);
       this.data = data;
       })
     }
     else if (this.location==null || this.location==""){
+      console.log("searchCategory")
+
       this.productService.searchAndCategory(this.searchTerm,this.categorySelected)
       .subscribe((data : {} ) => {
       this.data = data;
       })
     }
-    else{
+    else if(this.location != null || this.location != "" && this.categorySelected != null || 
+    this.categorySelected != "Category" && this.searchTerm != null || this.searchTerm==""){
+      console.log("all");
       this.productService.advancedSearch(this.searchTerm,this.categorySelected,this.location)
       .subscribe((data : {} ) => {
       this.data = data;
