@@ -15,7 +15,9 @@ export class ProductsComponent implements OnInit {
   public filterCategory : any
   public searchTerm !: string;
   searchKey:string ="";
+  categorySelected;
   data: any =[];
+  location;
   constructor(private api : ApiService, private cartService : CartService, private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -72,8 +74,33 @@ export class ProductsComponent implements OnInit {
     
   }
 
-}
-function search(event: Event, any: any) {
-  throw new Error('Function not implemented.');
+  selectCategory (event: any) {
+    //update the ui
+    this.categorySelected = event.target.value;
+    console.log(this.categorySelected)
+  }
+
+  category(){
+    this.productService.getByCategory(this.categorySelected)
+    .subscribe((data : {} ) => {
+      this.data = data;
+    })
+
+  }
+
+  locationSearch(){
+    this.productService.getByLocation(this.location)
+    .subscribe((data : {} ) => {
+      this.data = data;
+    })
+  }
+
+  locationCategory(){
+    this.productService.getByLocationCategory(this.location,this.categorySelected)
+    .subscribe((data : {} ) => {
+      this.data = data;
+    })
+  }
+
 }
 

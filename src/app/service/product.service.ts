@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { ApiService } from './api.service';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Product } from '../model/product';
 
@@ -26,11 +26,26 @@ export class ProductService {
     return this.apiService.get("http://localhost:8020/category/"+category, category)
   }
 
- 
+  getByLocation(location){
+    return this.apiService.get("http://localhost:8020/location/"+location, location)
+
+  }
+
+  getByLocationCategory(location, category): Observable<any> {
+    const body = {
+      location: location,
+      category: category
+    };
+    console.log(body)
+    return this.http.post<any>( "http://localhost:8020/find/"+location+"/"+category, body, 
+    {headers : new HttpHeaders({ 'Content-Type': 'application/json' })});
+  }
 
   singleProduct(id) {
     return this.apiService.get("http://localhost:8020/product/"+id, id)
   }
+
+
   updateProduct(id, product_dto): Observable<any> {
     return this.apiService.put(this.product_url + id, product_dto);
   }
