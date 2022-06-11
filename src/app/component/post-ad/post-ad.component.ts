@@ -5,7 +5,6 @@ import { Router } from '@angular/router';
 import { Product } from 'src/app/model/product';
 import { LoginSignupService } from 'src/app/service/login-signup.service';
 import { ProductService } from 'src/app/service/product.service';
-import * as $ from 'jquery';
 
 
 @Component({
