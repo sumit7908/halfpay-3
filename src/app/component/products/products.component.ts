@@ -105,5 +105,38 @@ export class ProductsComponent implements OnInit {
     })
   }
 
+  advancedSearch(){
+    if(this.searchTerm == null && this.categorySelected == null){
+      this.locationSearch();
+    }
+    else if(this.searchTerm == null && this.location){
+      this.category();
+    }
+    else if(this.categorySelected==null && this.location==null){
+      this.search();
+    }
+    else if (this.searchTerm == null){
+      this.locationCategory();
+    }
+    else if (this.categorySelected == null){
+      this.productService.searchAndLocation(this.searchTerm,this.location)
+      .subscribe((data : {} ) => {
+      this.data = data;
+      })
+    }
+    else if (this.location==null){
+      this.productService.searchAndCategory(this.searchTerm,this.categorySelected)
+      .subscribe((data : {} ) => {
+      this.data = data;
+      })
+    }
+    else{
+      this.productService.advancedSearch(this.searchTerm,this.categorySelected,this.location)
+      .subscribe((data : {} ) => {
+      this.data = data;
+      })
+    }
+  }
+
 }
 

@@ -50,6 +50,28 @@ export class ProductService {
     return this.http.get<any>( "http://localhost:8020/search/"+title+"/"+description, {params});
   }
 
+  searchAndLocation(keyword, location): Observable<any> {
+    const params = new HttpParams()
+    .set('keyword', keyword)
+    .set('location', location);
+    return this.http.get<any>( "http://localhost:8020/searchAndLocation/"+keyword+"/"+location, {params});
+  }
+
+  searchAndCategory(keyword, category): Observable<any> {
+    const params = new HttpParams()
+    .set('keyword', keyword)
+    .set('category', category);
+    return this.http.get<any>( "http://localhost:8020/searchAndCategory/"+keyword+"/"+category, {params});
+  }
+
+  advancedSearch(keyword, category, location): Observable<any> {
+    const params = new HttpParams()
+    .set('keyword', keyword)
+    .set('category', category)
+    .set('location', location);
+    return this.http.get<any>( "http://localhost:8020/searchAndCategory/"+keyword+"/"+category+"/"+location, {params});
+  }
+
   updateProduct(id, product_dto): Observable<any> {
     return this.apiService.put(this.product_url + id, product_dto);
   }
