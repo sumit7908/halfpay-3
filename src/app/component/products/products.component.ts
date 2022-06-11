@@ -106,25 +106,25 @@ export class ProductsComponent implements OnInit {
   }
 
   advancedSearch(){
-    if(this.searchTerm == null && this.categorySelected == null){
+    if(this.searchTerm == null || this.searchTerm=="" && this.categorySelected == null || this.categorySelected == "Category"){
       this.locationSearch();
     }
-    else if(this.searchTerm == null && this.location){
+    else if(this.searchTerm == null || this.searchTerm=="" && this.location || this.location==""){
       this.category();
     }
-    else if(this.categorySelected==null && this.location==null){
+    else if(this.categorySelected==null || this.categorySelected == "Category" && this.location==null || this.location==""){
       this.search();
     }
-    else if (this.searchTerm == null){
+    else if (this.searchTerm == null || this.searchTerm==""){
       this.locationCategory();
     }
-    else if (this.categorySelected == null){
+    else if (this.categorySelected == null || this.categorySelected == "Category"){
       this.productService.searchAndLocation(this.searchTerm,this.location)
       .subscribe((data : {} ) => {
       this.data = data;
       })
     }
-    else if (this.location==null){
+    else if (this.location==null || this.location==""){
       this.productService.searchAndCategory(this.searchTerm,this.categorySelected)
       .subscribe((data : {} ) => {
       this.data = data;
