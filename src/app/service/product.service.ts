@@ -27,6 +27,7 @@ export class ProductService {
   }
 
   getByLocation(location){
+    console.log(location)
     return this.apiService.get("http://localhost:8020/location/"+location, location)
 
   }
