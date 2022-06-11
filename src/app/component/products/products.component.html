@@ -42,33 +42,6 @@
                             <div class="container">
                                 <div class="row justify-content-center">
                                     <div class="col-lg-12 col-md-12 align-content-center">
-<<<<<<< HEAD
-                                            <form>
-                                                <div class="row" style="border-collapse:separate; border: spacing 15px; ;">
-                                                   
-                                                    <div class="col">
-                                                    
-                                                        <select class="w-100 form-control mt-lg-1 mt-md-2" name="category" (change)="selectCategory($event)">
-                                                            <option>Category</option>
-                                                                <option value="Automobiles">Automobiles</option> 
-                                                                <option value="Furniture">Furniture</option> 
-                                                                <option value="Electronic">Electronic</option>
-                                                                <option value="House">House</option>
-                                                                <option value="Others">Others</option>
-                                                        </select>       
-
-                                                
-                        
-                                                    </div>
-                                                    <div class="form-group col-md-4">
-                                                        <input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" name="location" placeholder="Location" [(ngModel)]="location">
-                                                    </div>
-                                                    <div class="form-group col-md-2 align-self-center">
-                                                        <button type="submit" class="btn btn-primary" (click)="locationSearch()" >Search Now</button>
-                                                    </div>
-                                                </div>
-                                            </form>
-=======
                                         <form>
 											<div class="row">
 												<div class="form-group col-md-4">
@@ -85,14 +58,13 @@
 													</select>
 												</div>
 												<div class="form-group col-md-3">
-													<input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" placeholder="Location">
+                                                    <input type="text" class="form-control my-2 my-lg-1" id="inputLocation4" name="location" placeholder="Location" [(ngModel)]="location">
 												</div>
 												<div class="form-group col-md-2 align-self-center">
-													<button type="submit" class="btn btn-primary" (click)="category()">Search Now</button>
+													<button type="submit" class="btn btn-primary" (click)="locationSearch()">Search Now</button>
 												</div>
 											</div>
 										</form>
->>>>>>> 1b818a891f865a95e07721d5ab13af7c6d2c50b2
                                         </div>
                                     
                                 </div>
