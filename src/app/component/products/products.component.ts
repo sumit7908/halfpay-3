@@ -18,6 +18,7 @@ export class ProductsComponent implements OnInit {
   categorySelected;
   data: any =[];
   location;
+  filterSelected;
   constructor(private api : ApiService, private cartService : CartService, private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -71,9 +72,20 @@ export class ProductsComponent implements OnInit {
   }
 
   selectCategory (event: any) {
-    //update the ui
     this.categorySelected = event.target.value;
     console.log(this.categorySelected)
+  }
+
+  selectFilter (event: any) {
+    this.filterSelected = event.target.value;
+  }
+
+  filtering(){
+    console.log(this.filterSelected)
+    this.productService.filtering(this.filterSelected)
+    .subscribe((data : {} ) => {
+      this.data = data;
+    })
   }
 
   category(){
@@ -90,6 +102,8 @@ export class ProductsComponent implements OnInit {
       this.data = data;
     })
   }
+
+
 
   locationCategory(){
     this.productService.getByLocationCategory(this.location,this.categorySelected)

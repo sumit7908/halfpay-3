@@ -32,6 +32,11 @@ export class ProductService {
 
   }
 
+  filtering(type){
+    return this.http.get("http://localhost:8020/filtering/"+type);
+
+  }
+
   getByLocationCategory(location, category): Observable<any> {
     const params = new HttpParams()
     .set('location', location)
