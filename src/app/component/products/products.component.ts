@@ -19,6 +19,7 @@ export class ProductsComponent implements OnInit {
   data: any =[];
   location;
   filterSelected;
+  sending;
   constructor(private api : ApiService, private cartService : CartService, private productService: ProductService) { }
 
   ngOnInit(): void {
@@ -82,10 +83,29 @@ export class ProductsComponent implements OnInit {
 
   filtering(){
     console.log(this.filterSelected)
-    this.productService.filtering(this.filterSelected)
-    .subscribe((data : {} ) => {
-      this.data = data;
+    if (this.filterSelected == 'low')
+    { 
+      this.productService.filtering('asc')
+      .subscribe((data : {} ) => {
+        this.data = data;
+      })
+    }
+    else if (this.filterSelected == 'high')
+    { 
+      this.productService.filtering('desc')
+      .subscribe((data : {} ) => {
+        this.data = data;
+      })
+    }
+
+    else{
+      this.productService.allProduct()
+    .subscribe( (res) => {
+        this.data = res;
+        this.productList = res;
+      
     })
+    }
   }
 
   category(){

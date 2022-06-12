@@ -33,6 +33,7 @@ export class ProductService {
   }
 
   filtering(type){
+    console.log(type);
     return this.http.get("http://localhost:8020/filtering/"+type);
 
   }
